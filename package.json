@@ -4,7 +4,7 @@
   "description": "e2e-automation",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test"
+    "test": "playwright test --project=chromium"
   },
   "repository": {
     "type": "git",

@@ -6,6 +6,9 @@ export default defineConfig({
 
   // Run all tests in parallel.
   fullyParallel: true,
+  
+  // Locator timeout
+  timeout: 10000,
 
   // Fail the build on CI if you accidentally left test.only in the source code.
   forbidOnly: !!process.env.CI,
@@ -32,6 +35,7 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      viewport: { width: 1280, height: 860}
     },
   ],
 });

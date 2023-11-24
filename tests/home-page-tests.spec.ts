@@ -13,7 +13,8 @@ test.describe('HomePage Tests', () => {
 
   test("Open network from Home page", async ({}) => {
     await homePage.navigate()
-    await homePage.openNetwork()
+    await homePage.clickAcceptCookies();
+    await homePage.clickOpenNetwork()
     expect(networkPage.getNetworBanner(), 'Network Page was NOT opened').toBeVisible();
   })
 });
