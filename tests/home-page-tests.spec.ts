@@ -6,15 +6,12 @@ test.describe('HomePage Tests', () => {
   let homePage: HomePage;
   let networkPage: NetworkPage;
 
-  test.beforeEach(({ page }) => {
+  test("Open network from Home page", async ({page}) => {
     homePage = new HomePage(page);
     networkPage = new NetworkPage(page);
-  });
-
-  test("Open network from Home page", async ({}) => {
     await homePage.navigate()
     await homePage.clickAcceptCookies();
     await homePage.clickOpenNetwork()
-    expect(networkPage.getNetworBanner(), 'Network Page was NOT opened').toBeVisible();
+    expect(networkPage.getNetworBanner('The World\'s Leading Payout'), 'Network Page was NOT opened').toBeVisible();
   })
 });

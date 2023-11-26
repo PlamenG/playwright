@@ -2,9 +2,9 @@ import { Page } from 'playwright';
 
 export default class NetworkPage {
   constructor(private readonly page: Page) {}
-  readonly networkBanner = this.page.locator('banner-content').filter({hasText: "The World's Leading Payout Network"});
+  readonly networkBanner = (headingTitle:string) => this.page.getByRole('heading', { name: headingTitle });
 
-  getNetworBanner(){
-    return this.networkBanner;
+  getNetworBanner(title:string){
+    return this.networkBanner(title);
   }
 }

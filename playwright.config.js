@@ -4,11 +4,14 @@ export default defineConfig({
   // Look for test files in the "tests" directory, relative to this configuration file.
   testDir: 'tests',
 
+  // Folder for test artifacts such as screenshots, videos, traces, etc.
+  outputDir: 'test-results',
+
   // Run all tests in parallel.
   fullyParallel: true,
   
-  // Locator timeout
-  timeout: 10000,
+  // Single test run tme limit in ms
+  timeout: 30*1000,
 
   // Fail the build on CI if you accidentally left test.only in the source code.
   forbidOnly: !!process.env.CI,
@@ -24,18 +27,24 @@ export default defineConfig({
 
   use: {
     // Base URL to use in actions like `await page.goto('/')`.
+    actionTimeout: 5*1000,
     baseURL: 'https://runa.io/',
     apiUrl: '',
-
+    headless: false,
+    navigationTimeout: 5*1000,
+    viewport: { width: 1680, height: 1200 },
     // Collect trace when retrying the failed test.
-    trace: 'on-first-retry',
+    trace: 'on',
+    screenshot: 'on',
+  },
+  expect:{
+    timeout: 5*1000
   },
   // Configure projects for major browsers.
   projects: [
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
-      viewport: { width: 1280, height: 860}
     },
   ],
 });
