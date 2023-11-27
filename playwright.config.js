@@ -32,7 +32,6 @@ export default defineConfig({
     apiUrl: '',
     headless: false,
     navigationTimeout: 5*1000,
-    viewport: { width: 1680, height: 1200 },
     // Collect trace when retrying the failed test.
     trace: 'on',
     screenshot: 'on',
@@ -43,8 +42,12 @@ export default defineConfig({
   // Configure projects for major browsers.
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: "chromium",
+      use: {
+        ...devices["Desktop Chrome"],
+        viewport: { width: 1680, height: 1200},
+      },
+      trace: 'on-failure'
     },
   ],
 });

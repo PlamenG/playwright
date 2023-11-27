@@ -1,14 +1,12 @@
-import { test, expect } from '@playwright/test';
-import HomePage from '../lib/pages/home-page';
-import NetworkPage from '../lib/pages/network-page';
+import { test, expect } from './hooks/inject-pages';
 
 test.describe('HomePage Tests', () => {
-  let homePage: HomePage;
-  let networkPage: NetworkPage;
+  // let homePage: HomePage;
+  // let networkPage: NetworkPage;
 
-  test("Open network from Home page", async ({page}) => {
-    homePage = new HomePage(page);
-    networkPage = new NetworkPage(page);
+  test("Open Network Page from Home page", async ({homePage, networkPage}) => {
+    // homePage = new HomePage(page);
+    // networkPage = new NetworkPage(page);
     await homePage.navigate()
     await homePage.clickAcceptCookies();
     await homePage.clickOpenNetwork()
