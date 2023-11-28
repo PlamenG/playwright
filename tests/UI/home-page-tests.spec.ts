@@ -1,4 +1,4 @@
-import { test, expect } from './hooks/inject-pages';
+import { test, expect } from '../hooks/inject-pages';
 
 test.describe('HomePage Tests', () => {
 
