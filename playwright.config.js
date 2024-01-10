@@ -27,17 +27,17 @@ export default defineConfig({
 
   use: {
     // Base URL to use in actions like `await page.goto('/')`.
-    actionTimeout: 5*1000,
+    actionTimeout: 10*1000,
     baseURL: 'https://runa.io/',
     apiUrl: '',
     headless: true,
-    navigationTimeout: 5*1000,
+    navigationTimeout: 10*1000,
     // Collect trace when retrying the failed test.
     trace: 'on',
     screenshot: 'on',
   },
   expect:{
-    timeout: 5*1000
+    timeout: 10*1000
   },
   // Configure projects for major browsers.
   projects: [
