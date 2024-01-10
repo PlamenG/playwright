@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { validateCoindeskBtcPriceSchema } from './Schemas/bitcoin-price-schema';
+import { validateCompanySchema } from './Schemas/company-schema';
 
 const url = 'https://api.coindesk.com/v1/bpi/currentprice.json';
 
