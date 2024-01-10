@@ -13,7 +13,7 @@ const timeSchema = z.object({
 const currency = z.object({
     code: z.union([ z.string().includes('USD'), z.string().includes('EUR'), z.string().includes('GBP')]) ,
     symbol: z.union([ z.string().includes('&#36;'), z.string().includes('&pound;'), z.string().includes('&euro;')]),
-    rate: z.string().length(11),
+    rate: z.string().min(9).max(12),
     description: z.string(),
     rate_float: z.number().positive().finite().safe(),
 })

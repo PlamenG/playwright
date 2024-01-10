@@ -11,6 +11,6 @@ test.describe('API tests', () => {
         const response = await coindesk.json()
         expect(coindesk.ok()).toBeTruthy();
         const schemaValidation = validateCoindeskBtcPriceSchema(response)
-        expect(schemaValidation.success, `Schema validation errors are: \n ${schemaValidation.error}`).toBeTruthy();
+        expect(schemaValidation.success, `Schema validation errors are: \n ${schemaValidation.error} \n \n response body was: \n ${JSON.stringify(response)}`).toBeTruthy();
     })
 });

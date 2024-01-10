@@ -30,7 +30,7 @@ export default defineConfig({
     actionTimeout: 5*1000,
     baseURL: 'https://runa.io/',
     apiUrl: '',
-    headless: false,
+    headless: true,
     navigationTimeout: 5*1000,
     // Collect trace when retrying the failed test.
     trace: 'on',
