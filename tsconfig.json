@@ -3,6 +3,6 @@
         "strict": true,
         "moduleResolution": "Node",
         "resolveJsonModule": true,
-        "target": "ES6"
+        "target": "es2016"
     }
 }

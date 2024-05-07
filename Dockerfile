@@ -13,6 +13,7 @@ ENV PATH /playwright/node_modules/.bin:$PATH
 # COPY the needed files to the app folder in Docker image
 COPY package.json /playwright/
 COPY playwright.config.js /playwright/
+COPY HARs/ /playwright/HARs/
 COPY lib/ /playwright/lib/
 COPY tests/ /playwright/tests/
 COPY tsconfig.json /playwright/

@@ -132,3 +132,4 @@ dist
 # test-results
 /test-results
 /playwright-report
+/allure-results

@@ -4,7 +4,8 @@
   "description": "e2e-automation",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test --project=chromium  --trace on"
+    "test": "playwright test --project=chromium  --trace on && npx allure generate allure-results",
+    "report": "npx allure serve allure-results"
   },
   "repository": {
     "type": "git",
@@ -13,10 +14,17 @@
   "author": "Plamen Gospodinov",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.40.0",
+    "@playwright/test": "^1.43.1",
+    "@types/levenshtein": "^1.0.4",
+    "@types/node": "^20.12.7",
+    "allure-commandline": "^2.29.0",
+    "allure-playwright": "^2.15.1",
     "playwright": "^1.40.0"
   },
   "dependencies": {
+    "fastest-levenshtein": "^1.0.16",
+    "json-2-csv": "^5.5.1",
+    "levenshtein": "^1.0.5",
     "zod": "^3.22.4"
   }
 }
